@@ -14,12 +14,25 @@ public class GoofyNames {
 		
 		// 2. Print upper case name to the console using .toUpperCase()
 		//    Run your program to see that this works.
-				String result;
+				
+		String fina="";
+		int result;
 				int i=0;
-				result=goofyName.toUpperCase();
-System.out.println(result);
-for(i=0;i<=10;i++) {
+				result=goofyName.length();
+				
+				
+for(i=0;i<result-1;i++) {
+	String temp = String.valueOf(goofyName.charAt(i));
+	if(i%2==0) {
+		fina+=temp.toUpperCase();
+		
+	}
+	fina+=i;
 }
+	System.out.println(fina);
+	}
+}
+
 		// 3. Loop through each character of the name (steps 4 - 7).
 		//    HINT: Use .length() to determine the number of characters in the String.
 
@@ -39,6 +52,6 @@ for(i=0;i<=10;i++) {
 		
 		// 8. Use pop-up to show user their Goofy name
 
-	}
-}
+	
+
 
