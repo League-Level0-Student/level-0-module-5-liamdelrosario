@@ -3,6 +3,38 @@ package _02_nested_loops._2_amazing_rings;
 import processing.core.PApplet;
 import processing.core.PImage;
 
+static final int WIDTH = 800;
+static final int HEIGHT = 600;
+
+PImage waldo;
+
+@Override
+public void setup() {
+  noFill();
+size(WIDTH,HEIGHT);
+}
+
+@Override
+public void draw() {
+
+  for(int i=0; i<=8; i++){
+
+
+
+
+if(i%2==0){
+ fill(#ff0000);
+ ellipse(250,250, 500-(55*i),500-(55*i)); 
+}
+else{
+fill(#000000);
+ellipse(250,250, 500-(55*i),500-(55*i)); 
+}
+}
+    
+  }
+
+
 /*
  * Goal: Create a pair of Amazing Rings!
  * 
@@ -36,37 +68,43 @@ import processing.core.PImage;
  * 9. Make this set of rings move in the opposite direction to the other rings
  *    These rings must also "bounce" off the sides of the window.
  */
-public class AmazingRings extends PApplet {
-    static final int WIDTH = 800;
-    static final int HEIGHT = 600;
-
-    PImage waldo;
-
-    @Override
-    public void settings() {
-    	size(WIDTH,HEIGHT);
-    }
+int x=250;
+int speed=1;
+int y=550; 
+int spedd=-1;
     @Override
     public void setup() {
-    	noFill();
-
+      noFill();
+size(800,600);
     }
 
     @Override
     public void draw() {
-    	int i=0;
-    	for(i=0;i<=100;i++) {
-    		
-    		if(i%2==0) {
-    		     ellipse(250,250, 250-(5*i),250-(5*i)); 
-    		}
-    		  
-    	}
-    		
-    	}
+  background(255);
+      for(int i=0; i<=25; i++){
+        noFill();
+    ellipse(x,250, 20*i,20*i); 
     
-
-    static public void main(String[] args) {
-        PApplet.main(AmazingRings.class.getName());
-    }
-}
+  }
+  for(int i=0; i<=25; i++){
+        noFill();
+    ellipse(y,250, 20*i,20*i); 
+    
+  }
+      x+=speed;
+      if(x==600){
+      speed=-speed;
+      }
+         if(x==200){
+           speed=-speed;
+         }
+         y+=spedd;
+         if(y==200){
+           spedd=-spedd;
+         }
+         if(y==600){
+         spedd=-spedd;
+         }
+      }
+  
+  
