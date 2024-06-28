@@ -12,13 +12,28 @@ public class Calculator {
 		int number2 = Integer.parseInt(input2);
 		int task = JOptionPane.showOptionDialog(null, "What do you choose?", "Calculator", 0,
 				JOptionPane.INFORMATION_MESSAGE, null, new String[] { "divide", "multiply", "subtract", "add" }, null);
-
+		double answer=0;
+		if (task==0) {
+			answer=divide(number1,number2);
+		}
+		if (task==1) {
+			answer=multiply(number1,number2);
+		}
+		if (task==2) {
+			answer=subtract(number1,number2);
+		}
+		if (task==3) {
+			answer=add(number1,number2);
+		}
 		// 3) Call the correct method depending on what option the user chooses
 		
 		// 4) Call the result() method and put the answer in a pop-up
+		JOptionPane.showMessageDialog(null, result(answer));
 	}
 	private static double divide(int number1, int number2) {
-		double result= number1/number2;
+		double result= (double) number1/number2;	
+
+		return result;
 	}
 private static int multiply(int number1, int number2) {
 		int result= number1*number2;
@@ -29,10 +44,12 @@ private static int subtract(int number1, int number2) {
 		return result;
 }
 private static int add(int number1, int number2) {
-		int result=number1+number2;
+		int result=number1+number2;	
+		return result;
+		
 }
-private static void result() {
-	
+private static String result(double num) {
+	return "Your answer is "+num;
 }
 	// 1) Make 4 static methods (add, subtract, multiply, divide)
 	//		They should each take 2 numbers as parameters
